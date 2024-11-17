@@ -49,4 +49,12 @@ export const SpaceXService = {
       },
     });
   },
+  getDragons: async () => {
+    return await API.get("v4/dragons", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  },
 };

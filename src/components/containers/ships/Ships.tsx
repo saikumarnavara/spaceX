@@ -36,35 +36,39 @@ const Ships = () => {
       )}
       {!loading && !error && ships.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ships?.map((ship: any) => (
-            <div
-              key={ship.id}
-              className="bg-gray-800 text-white rounded-lg shadow-md overflow-hidden"
-            >
-              {ship.image && (
-                <img
-                  src={ship.image}
-                  alt={ship.name}
-                  className="w-full h-48 object-cover"
-                />
-              )}
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-2">{ship.name}</h3>
-                <p className="text-gray-400">Type: {ship.type || "N/A"}</p>
-                <p className="text-gray-400">Roles: {ship.roles.join(", ")}</p>
-                {ship.link && (
-                  <a
-                    href={ship.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
-                  >
-                    More Details
-                  </a>
+          {ships &&
+            ships?.length > 0 &&
+            ships?.map((ship: any) => (
+              <div
+                key={ship.id}
+                className="bg-gray-800 text-white rounded-lg shadow-md overflow-hidden"
+              >
+                {ship.image && (
+                  <img
+                    src={ship.image}
+                    alt={ship.name}
+                    className="w-full h-48 object-cover"
+                  />
                 )}
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-2">{ship.name}</h3>
+                  <p className="text-gray-400">Type: {ship.type || "N/A"}</p>
+                  <p className="text-gray-400">
+                    Roles: {ship.roles?.join(", ")}
+                  </p>
+                  {ship.link && (
+                    <a
+                      href={ship.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      More Details
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       )}
     </div>
