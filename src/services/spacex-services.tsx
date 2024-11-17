@@ -33,4 +33,12 @@ export const SpaceXService = {
       },
     });
   },
+  getRocketLaunches: async (payload: string) => {
+    return await API.get(`v5/launches/${payload}`, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  },
 };

@@ -1,46 +1,84 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-logo">SpaceX</div>
-        <ul className="navbar-menu">
-          <li className="navbar-item">
+    <nav className="bg-gray-800 text-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between p-4">
+        {/* Logo */}
+        <div className="text-2xl font-bold">SpaceX</div>
+
+        {/* Hamburger Menu (Mobile View) */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-white text-2xl md:hidden focus:outline-none"
+        >
+          ☰
+        </button>
+
+        {/* Menu Items */}
+        <ul
+          className={`fixed inset-y-0 left-0 w-3/4 bg-gray-900 transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out z-20 md:static md:flex md:w-auto md:bg-transparent md:translate-x-0 md:transition-none`}
+        >
+          <li className="border-b border-gray-700 md:border-none">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
+                isActive
+                  ? "block px-4 py-2 text-gray-300 bg-gray-700 md:bg-transparent md:text-white md:hover:text-gray-300"
+                  : "block px-4 py-2 text-gray-300 hover:bg-gray-700 md:hover:text-gray-300"
               }
             >
               Home
             </NavLink>
           </li>
-          <li className="navbar-item">
+          <li className="border-b border-gray-700 md:border-none">
             <NavLink
               to="/rockets"
               className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
+                isActive
+                  ? "block px-4 py-2 text-gray-300 bg-gray-700 md:bg-transparent md:text-white md:hover:text-gray-300"
+                  : "block px-4 py-2 text-gray-300 hover:bg-gray-700 md:hover:text-gray-300"
               }
             >
               Rockets
             </NavLink>
           </li>
-          <li className="navbar-item">
+          <li className="border-b border-gray-700 md:border-none">
             <NavLink
               to="/history"
               className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
+                isActive
+                  ? "block px-4 py-2 text-gray-300 bg-gray-700 md:bg-transparent md:text-white md:hover:text-gray-300"
+                  : "block px-4 py-2 text-gray-300 hover:bg-gray-700 md:hover:text-gray-300"
               }
             >
               History
             </NavLink>
           </li>
-          <li className="navbar-item">
+          <li className="border-b border-gray-700 md:border-none">
+            <NavLink
+              to="/launches"
+              className={({ isActive }) =>
+                isActive
+                  ? "block px-4 py-2 text-gray-300 bg-gray-700 md:bg-transparent md:text-white md:hover:text-gray-300"
+                  : "block px-4 py-2 text-gray-300 hover:bg-gray-700 md:hover:text-gray-300"
+              }
+            >
+              Launches
+            </NavLink>
+          </li>
+          <li>
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
+                isActive
+                  ? "block px-4 py-2 text-gray-300 bg-gray-700 md:bg-transparent md:text-white md:hover:text-gray-300"
+                  : "block px-4 py-2 text-gray-300 hover:bg-gray-700 md:hover:text-gray-300"
               }
             >
               About
