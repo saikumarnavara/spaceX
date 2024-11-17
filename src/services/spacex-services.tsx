@@ -41,4 +41,12 @@ export const SpaceXService = {
       },
     });
   },
+  getShips: async () => {
+    return await API.get("v4/ships", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  },
 };

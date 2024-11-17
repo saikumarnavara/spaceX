@@ -1,7 +1,7 @@
 import Launch from "../containers/Launches/Launch";
 const LaunchScreen = () => {
   return (
-    <div>
+    <div className="mt-16">
       <Launch />
     </div>
   );

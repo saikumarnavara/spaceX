@@ -4,7 +4,7 @@ import About from "../containers/Landing/About";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-16">
       <Rockets />
       <History />
       <About />

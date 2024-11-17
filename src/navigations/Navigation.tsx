@@ -5,6 +5,7 @@ import RocketsScreen from "../components/screens/Rockets";
 import RocketDetails from "../components/containers/Rockets/RocketDetails";
 import AboutScreen from "../components/screens/About";
 import LaunchScreen from "../components/screens/Launch";
+import ShipsScreen from "../components/screens/Ships";
 
 const route = (
   <Routes>
@@ -14,6 +15,7 @@ const route = (
     <Route path="/rockets/details" element={<RocketDetails />} />
     <Route path="/launches" element={<LaunchScreen />} />
     <Route path="/about" element={<AboutScreen />} />
+    <Route path="/ships" element={<ShipsScreen />} />
   </Routes>
 );
 export default route;

@@ -1,7 +1,7 @@
 import About from "../containers/Landing/About";
 const AboutScreen = () => {
   return (
-    <div>
+    <div className="mt-16">
       <About />
     </div>
   );

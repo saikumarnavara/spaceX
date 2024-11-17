@@ -17,7 +17,7 @@ const Launch = () => {
   const dispatch = useDispatch();
   const [launchTypee, setlaunchType] = useState("latest");
   const { loading, launches } = useSelector((state: any) => state.launches);
-  console.log(launches);
+  // console.log(launches);
 
   let launchTypes = [
     {
