@@ -7,10 +7,13 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white shadow-md">
       <div className="container mx-auto flex items-center justify-between p-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold">SpaceX</div>
+        <div
+          className="text-2xl font-bold"
+          onClick={() => (window.location.href = "/")}
+        >
+          SpaceX
+        </div>
 
-        {/* Hamburger Menu (Mobile View) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-white text-2xl md:hidden focus:outline-none"
@@ -18,7 +21,6 @@ const Navbar = () => {
           ☰
         </button>
 
-        {/* Menu Items */}
         <ul
           className={`fixed inset-y-0 left-0 w-3/4 bg-gray-900 transform ${
             isOpen ? "translate-x-0" : "-translate-x-full"
