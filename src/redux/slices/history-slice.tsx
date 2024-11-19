@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit/react";
 
-const initialState = {
+interface HistoryState {
+  loading: boolean;
+  error: string | null;
+  history: any[];
+}
+const initialState: HistoryState = {
   loading: false,
   error: null,
   history: [],

@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
+
+interface ShipsState {
+  loading: boolean;
+  ships: any[];
+  error: string | null;
+}
+const initialState: ShipsState = {
   loading: false,
   ships: [],
   error: null,

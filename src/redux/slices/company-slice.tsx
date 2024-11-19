@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit/react";
 
-const initialState = {
+interface CompanyDetails {
+  loading: boolean;
+  error: string | null;
+  companyDetails: any[];
+}
+
+const initialState: CompanyDetails = {
   loading: false,
   error: null,
   companyDetails: [],

@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit/react";
 
-const initialState = {
+interface RocketsState {
+  loading: boolean;
+  rockets: any[];
+  error: string | null;
+  rocketDetails: any;
+}
+const initialState: RocketsState = {
   loading: false,
   rockets: [],
   error: null,

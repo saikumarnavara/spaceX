@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
+
+interface DragonState {
+  loading: boolean;
+  dragons: any[];
+  error: string | null;
+}
+const initialState: DragonState = {
   loading: false,
   dragons: [],
   error: null,

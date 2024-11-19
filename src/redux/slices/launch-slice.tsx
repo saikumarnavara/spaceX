@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit/react";
-
-const initialState = {
+interface Launches {
+  loading: boolean;
+  error: string | null;
+  launches: any;
+}
+const initialState: Launches = {
   loading: false,
   error: null,
   launches: null,
